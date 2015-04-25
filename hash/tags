@@ -1,0 +1,21 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+FALSE	hash_c.c	26;"	d	file:
+FILENAMELENGTH	hash_c.c	24;"	d	file:
+HASHSIZE	hash_c.c	23;"	d	file:
+TRUE	hash_c.c	25;"	d	file:
+case_insensitive	hash_c.c	/^char case_insensitive(char ch)$/;"	f
+file	hash_c.c	/^struct file$/;"	s	file:
+files	hash_c.c	/^struct file * files[HASHSIZE];$/;"	v	typeref:struct:file
+hash	hash_c.c	/^int hash(char *s)$/;"	f
+init	hash_c.c	/^void init()$/;"	f
+insert	hash_c.c	/^void insert(char *s)$/;"	f
+main	hash_c.c	/^int main()$/;"	f
+name	hash_c.c	/^    char name[FILENAMELENGTH];$/;"	m	struct:file	file:
+next	hash_c.c	/^    struct file *next;$/;"	m	struct:file	typeref:struct:file::file	file:
+search	hash_c.c	/^int search(char *s)$/;"	f
+show_all	hash_c.c	/^void show_all()$/;"	f

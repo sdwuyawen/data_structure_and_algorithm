@@ -1,0 +1,32 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: chain_table_add - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\WUYAWE~1\LOCALS~1\Temp\RSP4A9E.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/chain_table_add.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ  /c 
+"E:\VC++学习\我的程序\算法_数据结构\c_data_structure\单链表实现多项式的相加\chain_table_add\chain_table_add.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\WUYAWE~1\LOCALS~1\Temp\RSP4A9E.tmp" 
+Creating temporary file "C:\DOCUME~1\WUYAWE~1\LOCALS~1\Temp\RSP4A9F.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib  kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/chain_table_add.pdb" /debug /machine:I386 /out:"Debug/chain_table_add.exe" /pdbtype:sept 
+".\Debug\chain_table_add.obj"
+]
+Creating command line "link.exe @C:\DOCUME~1\WUYAWE~1\LOCALS~1\Temp\RSP4A9F.tmp"
+<h3>Output Window</h3>
+Compiling...
+chain_table_add.c
+Linking...
+
+
+
+<h3>Results</h3>
+chain_table_add.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
