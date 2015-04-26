@@ -25,13 +25,12 @@ int lengthOfLongestSubstring(char* s)
 	int j;
 	int len = strlen(s);
 	int max_sublen = 0;
-	int hash_table[200];	//记录某字符上一次出现位置
+	int hash_table[200];
 	int start = 0;
 
 	memset(hash_table, -1, sizeof(hash_table));
 	for(i = 0; i < len; i++)		//起始位置
 	{
-		//hash_table[s[i]]是字符s[i]上次出现的位置
 		if(hash_table[s[i]] >= start)	//已经重复
 		{
 			max_sublen = max_sublen >= i - start ? max_sublen : i - start;
