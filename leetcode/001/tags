@@ -4,28 +4,32 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-DestroyTable	hash_notfinished.c	/^void DestroyTable( HashTable H )$/;"	f
-Element	hash_notfinished.c	/^	ElementType Element;$/;"	m	struct:ListNode	file:
-ElementType	hash_notfinished.c	/^typedef int ElementType;$/;"	t	file:
-Error	hash_notfinished.c	39;"	d	file:
-FatalError	hash_notfinished.c	40;"	d	file:
-Find	hash_notfinished.c	/^Position Find( ElementType Key, HashTable H )$/;"	f
-Hash	hash_notfinished.c	/^Index Hash( ElementType Key, int TableSize )$/;"	f
-HashTable	hash_notfinished.c	/^typedef struct HashTbl *HashTable;$/;"	t	typeref:struct:HashTbl	file:
-HashTbl	hash_notfinished.c	/^struct HashTbl$/;"	s	file:
-Index	hash_notfinished.c	/^typedef unsigned int Index;$/;"	t	file:
-InitializeTable	hash_notfinished.c	/^HashTable InitializeTable( int TableSize )$/;"	f
-Insert	hash_notfinished.c	/^void Insert( ElementType Key, ElementType Value, HashTable H )$/;"	f
-List	hash_notfinished.c	/^typedef Position List;$/;"	t	file:
-ListNode	hash_notfinished.c	/^struct ListNode$/;"	s	file:
-MinTableSize	hash_notfinished.c	42;"	d	file:
-Next	hash_notfinished.c	/^	Position    Next;$/;"	m	struct:ListNode	file:
-NextPrime	hash_notfinished.c	/^static int NextPrime( int N )$/;"	f	file:
-Position	hash_notfinished.c	/^typedef struct ListNode *Position;$/;"	t	typeref:struct:ListNode	file:
-Retrieve	hash_notfinished.c	/^ElementType Retrieve( Position P )$/;"	f
-TableSize	hash_notfinished.c	/^	int TableSize;$/;"	m	struct:HashTbl	file:
-TheLists	hash_notfinished.c	/^	List *TheLists;$/;"	m	struct:HashTbl	file:
-Value	hash_notfinished.c	/^	ElementType Value;$/;"	m	struct:ListNode	file:
-main	hash_notfinished.c	/^int main(void)$/;"	f
-num	hash_notfinished.c	/^int num[] = {-1,-2,-3,-4,-5};$/;"	v
-twoSum	hash_notfinished.c	/^int* twoSum(int* nums, int numsSize, int target, int* returnSize)$/;"	f
+Cell	hash_quad.c	/^typedef struct HashEntry Cell;$/;"	t	typeref:struct:HashEntry	file:
+Deleted	hash_quad.c	/^enum KindOfEntry { Legitimate, Empty, Deleted };$/;"	e	enum:KindOfEntry	file:
+DestroyTable	hash_quad.c	/^void DestroyTable( HashTable H )$/;"	f
+Element	hash_quad.c	/^	ElementType      Element;$/;"	m	struct:HashEntry	file:
+ElementType	hash_quad.c	/^typedef int ElementType;$/;"	t	file:
+Empty	hash_quad.c	/^enum KindOfEntry { Legitimate, Empty, Deleted };$/;"	e	enum:KindOfEntry	file:
+Error	hash_quad.c	22;"	d	file:
+FatalError	hash_quad.c	23;"	d	file:
+Find	hash_quad.c	/^Position Find( ElementType Key, HashTable H )$/;"	f
+Hash	hash_quad.c	/^Index Hash( ElementType Key, int TableSize )$/;"	f
+HashEntry	hash_quad.c	/^struct HashEntry$/;"	s	file:
+HashTable	hash_quad.c	/^typedef struct HashTbl *HashTable;$/;"	t	typeref:struct:HashTbl	file:
+HashTbl	hash_quad.c	/^struct HashTbl$/;"	s	file:
+Index	hash_quad.c	/^typedef unsigned int Index;$/;"	t	file:
+Info	hash_quad.c	/^	enum KindOfEntry Info;$/;"	m	struct:HashEntry	typeref:enum:HashEntry::KindOfEntry	file:
+InitializeTable	hash_quad.c	/^HashTable InitializeTable( int TableSize )$/;"	f
+Insert	hash_quad.c	/^void Insert( ElementType Key, HashTable H )$/;"	f
+KindOfEntry	hash_quad.c	/^enum KindOfEntry { Legitimate, Empty, Deleted };$/;"	g	file:
+Legitimate	hash_quad.c	/^enum KindOfEntry { Legitimate, Empty, Deleted };$/;"	e	enum:KindOfEntry	file:
+MinTableSize	hash_quad.c	41;"	d	file:
+NextPrime	hash_quad.c	/^static int NextPrime( int N )$/;"	f	file:
+Position	hash_quad.c	/^typedef Index Position;$/;"	t	file:
+Rehash	hash_quad.c	/^HashTable Rehash( HashTable H )$/;"	f
+Retrieve	hash_quad.c	/^ElementType Retrieve( Position P, HashTable H )$/;"	f
+TableSize	hash_quad.c	/^	int TableSize;$/;"	m	struct:HashTbl	file:
+TheCells	hash_quad.c	/^	Cell *TheCells;$/;"	m	struct:HashTbl	file:
+main	hash_quad.c	/^int main(void)$/;"	f
+num	hash_quad.c	/^int num[] = {-1,-2,-3,-4,-5};$/;"	v
+twoSum	hash_quad.c	/^int* twoSum(int* nums, int numsSize, int target, int* returnSize)$/;"	f
