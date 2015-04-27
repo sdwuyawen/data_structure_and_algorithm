@@ -32,7 +32,7 @@ void sort(int *array, int len)
 void add(int a, int b)
 {
     int val1;
-    int val2
+    int val2;
     
     while(1)
     {

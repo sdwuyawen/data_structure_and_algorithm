@@ -1,0 +1,29 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+DestroyTable	hash_seperate_chaining.c	/^void DestroyTable( HashTable H )$/;"	f
+Element	hash_seperate_chaining.c	/^	ElementType Element;$/;"	m	struct:ListNode	file:
+ElementType	hashsep.h	/^typedef int ElementType;$/;"	t
+Error	fatal.h	4;"	d
+FatalError	fatal.h	5;"	d
+Find	hash_seperate_chaining.c	/^Position Find( ElementType Key, HashTable H )$/;"	f
+Hash	hash_seperate_chaining.c	/^Index Hash( ElementType Key, int TableSize )$/;"	f
+HashTable	hashsep.h	/^typedef struct HashTbl *HashTable;$/;"	t	typeref:struct:HashTbl
+HashTbl	hash_seperate_chaining.c	/^struct HashTbl$/;"	s	file:
+Index	hashsep.h	/^typedef unsigned int Index;$/;"	t
+InitializeTable	hash_seperate_chaining.c	/^HashTable InitializeTable( int TableSize )$/;"	f
+Insert	hash_seperate_chaining.c	/^void Insert( ElementType Key, HashTable H )$/;"	f
+List	hash_seperate_chaining.c	/^typedef Position List;$/;"	t	file:
+ListNode	hash_seperate_chaining.c	/^struct ListNode$/;"	s	file:
+MinTableSize	hash_seperate_chaining.c	24;"	d	file:
+Next	hash_seperate_chaining.c	/^	Position    Next;$/;"	m	struct:ListNode	file:
+NextPrime	hash_seperate_chaining.c	/^static int NextPrime( int N )$/;"	f	file:
+Position	hashsep.h	/^typedef struct ListNode *Position;$/;"	t	typeref:struct:ListNode
+Retrieve	hash_seperate_chaining.c	/^ElementType Retrieve( Position P )$/;"	f
+TableSize	hash_seperate_chaining.c	/^	int TableSize;$/;"	m	struct:HashTbl	file:
+TheLists	hash_seperate_chaining.c	/^	List *TheLists;$/;"	m	struct:HashTbl	file:
+_HashSep_H	hashsep.h	10;"	d
+main	hash_seperate_chaining.c	/^int main(void)$/;"	f
