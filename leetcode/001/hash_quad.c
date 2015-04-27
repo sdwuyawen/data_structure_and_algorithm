@@ -133,6 +133,9 @@ Position Find( ElementType Key, HashTable H )
 		if( CurrentPos >= H->TableSize )
 			CurrentPos -= H->TableSize;
 	}
+
+	//若找到，则H->TheCells[ CurrentPos ].Info != Empty
+	//若没有找到，则H->TheCells[ CurrentPos ].Info == Empty
 	return CurrentPos;
 }
 
