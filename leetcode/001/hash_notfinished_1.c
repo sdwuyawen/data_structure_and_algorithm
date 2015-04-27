@@ -1,12 +1,12 @@
 /*
  * =====================================================================================
  *
- *       Filename:  hash_seperate_chaining.c
+ *       Filename:  1.c
  *
  *    Description:  
  *
  *        Version:  1.0
- *        Created:  04/27/2015 09:11:19 AM
+ *        Created:  04/24/2015 08:55:32 AM
  *       Revision:  none
  *       Compiler:  gcc
  *
@@ -16,10 +16,28 @@
  * =====================================================================================
  */
 #include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 
-#include "fatal.h"
-#include "hashsep.h"
-#include <stdlib.h>
+/* Interface for separate chaining hash table */
+typedef int ElementType;
+
+typedef unsigned int Index;
+
+struct ListNode;
+typedef struct ListNode *Position;
+struct HashTbl;
+typedef struct HashTbl *HashTable;
+
+HashTable InitializeTable( int TableSize );
+void DestroyTable( HashTable H );
+Position Find( ElementType Key, HashTable H );
+void Insert( ElementType Key, ElementType Value, HashTable H );
+ElementType Retrieve( Position P );
+/* Routines such as Delete are MakeEmpty are omitted */
+
+#define Error( Str )        FatalError( Str )
+#define FatalError( Str )   fprintf( stderr, "%s\n", Str ), exit( 1 )
 
 #define MinTableSize (10)
 
@@ -62,6 +80,10 @@ ContOuter: ;
 /* Hash function for ints */ 
 Index Hash( ElementType Key, int TableSize )
 {
+	if(Key < 0)
+	{
+		Key = -Key;
+	}
 	return Key % TableSize;
 }
 
@@ -171,32 +193,75 @@ void DestroyTable( HashTable H )
 	free( H );
 }
 
-#define ARRAY_SIZE(x) (sizeof(x) / sizeof(x[0]))
-int array[] = {100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 210, 211, 212 ,213 ,214, 215,
-				216, 217, 218, 219};
 
-int main(void)
+int* twoSum(int* nums, int numsSize, int target, int* returnSize)
 {
+    int i;
+
+    int *index;
+	int *array;
+
 	HashTable hash_table;
 	struct ListNode *node;
-	int i;
 
 	hash_table = InitializeTable(10);
 
-	printf("hash size = %d\n", hash_table->TableSize);
+    index = malloc(sizeof(int) * 2);
+	memset(index, 0, sizeof(int) * 2);
 
-	for(i = 0; i < ARRAY_SIZE(array); i++)
+/*  for(i = 0; i < numsSize; i++)
 	{
-		//key, value, table
-		Insert(array[i], i, hash_table);
+		printf("array[%d] = %d\n", i, array[i]);
+	}
+*/
+
+	for(i = 0; i < numsSize; i++)
+	{
+		Insert(nums[i], i, hash_table);		
 	}
 
-	for(i = 0; i < ARRAY_SIZE(array); i++)
+	for(i = 0; i < numsSize; i++)
 	{
-		node = Find(array[i], hash_table);
-		printf("val = %d, index = %d\n", node->Value, node->Element);
+		node = Find(target - nums[i], hash_table);
+
+		if(node != NULL)
+		{
+			index[0] = i < node->Value ? i + 1 : node->Value + 1;
+			index[1] = i > node->Value ? i + 1 : node->Value + 1;
+			*returnSize = 2;
+
+			return index;
+		}
+	}
+
+    *returnSize = 0;
+
+    return NULL;
+}
+
+
+//int num[] = {2, 11, 7, 15};
+//int num[] = {0 , 4, 3 ,0};
+int num[] = {-1,-2,-3,-4,-5};
+int main(void)
+{
+	int returnsize;
+	int i;
+	int *pret_val;
+
+	pret_val = twoSum(num, sizeof(num)/sizeof(num[0]), -8, &returnsize);
+
+	for(i = 0; i < sizeof(num)/sizeof(num[0]); i++)
+	{
+		printf("num[%d] = %d\n", i, num[i]);
+	}
+
+	
+	for(i = 0; i < returnsize; i ++)
+	{
+		printf("#%d = %d\n", i, pret_val[i]);
 	}
 
 	return 0;
-	
+
 }

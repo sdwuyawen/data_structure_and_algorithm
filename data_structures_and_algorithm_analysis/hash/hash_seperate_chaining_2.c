@@ -116,11 +116,6 @@ Position Find( ElementType Key, HashTable H )
 /* END */
 
 /* START: fig5_10.txt */
-/* 
- * Key是关键字
- * Value是数值
- * H是散列表
- */
 void Insert( ElementType Key, ElementType Value, HashTable H )
 {
 	Position Pos, NewCell;

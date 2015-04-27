@@ -4,40 +4,28 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-DestroyTable	hash.c	/^void DestroyTable( HashTable H )$/;"	f
-Element	hash.c	/^	ElementType Element;$/;"	m	struct:ListNode	file:
-ElementType	hash.c	/^typedef int ElementType;$/;"	t	file:
-Error	hash.c	39;"	d	file:
-FatalError	hash.c	40;"	d	file:
-Find	hash.c	/^Position Find( ElementType Key, HashTable H )$/;"	f
-Hash	hash.c	/^Index Hash( ElementType Key, int TableSize )$/;"	f
-HashTable	hash.c	/^typedef struct HashTbl *HashTable;$/;"	t	typeref:struct:HashTbl	file:
-HashTbl	hash.c	/^struct HashTbl$/;"	s	file:
-Index	hash.c	/^typedef unsigned int Index;$/;"	t	file:
-InitializeTable	hash.c	/^HashTable InitializeTable( int TableSize )$/;"	f
-Insert	hash.c	/^void Insert( ElementType Key, HashTable H )$/;"	f
-List	hash.c	/^typedef Position List;$/;"	t	file:
-ListNode	hash.c	/^struct ListNode$/;"	s	file:
-MinTableSize	hash.c	42;"	d	file:
-Next	hash.c	/^	Position    Next;$/;"	m	struct:ListNode	file:
-NextPrime	hash.c	/^static int NextPrime( int N )$/;"	f	file:
-Position	hash.c	/^typedef struct ListNode *Position;$/;"	t	typeref:struct:ListNode	file:
-Retrieve	hash.c	/^ElementType Retrieve( Position P )$/;"	f
-TableSize	hash.c	/^	int TableSize;$/;"	m	struct:HashTbl	file:
-TheLists	hash.c	/^	List *TheLists;$/;"	m	struct:HashTbl	file:
-main	N2.c	/^int main(void)$/;"	f
-main	cpp_code/c_cpp.cpp	/^int main()$/;"	f
-main	cpp_code/test.cpp	/^int main()$/;"	f
-main	cpp_code/test_1.cpp	/^int main()$/;"	f
-main	hash.c	/^int main(void)$/;"	f
-main	test.c	/^int main(void)$/;"	f
-num	N2.c	/^int num[] = {2, 11, 7, 15};$/;"	v
-num	hash.c	/^int num[] = {-1,-2,-3,-4,-5};$/;"	v
-num	test.c	/^int num[] = {-1,-2,-3,-4,-5};$/;"	v
-quick_sort	test.c	/^void quick_sort(int s[], int l, int r)$/;"	f
-twoSum	N2.c	/^int* twoSum(int* nums, int numsSize, int target, int* returnSize) $/;"	f
-twoSum	cpp_code/c_cpp.cpp	/^vector<int> twoSum(vector<int> &numbers, int target) $/;"	f
-twoSum	cpp_code/test.cpp	/^vector<int> twoSum(vector<int> &numbers, int target) $/;"	f
-twoSum	cpp_code/test_1.cpp	/^vector<int> twoSum(vector<int> &numbers, int target) $/;"	f
-twoSum	hash.c	/^int* twoSum(int* nums, int numsSize, int target, int* returnSize)$/;"	f
-twoSum	test.c	/^int* twoSum(int* nums, int numsSize, int target, int* returnSize)$/;"	f
+DestroyTable	hash_notfinished.c	/^void DestroyTable( HashTable H )$/;"	f
+Element	hash_notfinished.c	/^	ElementType Element;$/;"	m	struct:ListNode	file:
+ElementType	hash_notfinished.c	/^typedef int ElementType;$/;"	t	file:
+Error	hash_notfinished.c	39;"	d	file:
+FatalError	hash_notfinished.c	40;"	d	file:
+Find	hash_notfinished.c	/^Position Find( ElementType Key, HashTable H )$/;"	f
+Hash	hash_notfinished.c	/^Index Hash( ElementType Key, int TableSize )$/;"	f
+HashTable	hash_notfinished.c	/^typedef struct HashTbl *HashTable;$/;"	t	typeref:struct:HashTbl	file:
+HashTbl	hash_notfinished.c	/^struct HashTbl$/;"	s	file:
+Index	hash_notfinished.c	/^typedef unsigned int Index;$/;"	t	file:
+InitializeTable	hash_notfinished.c	/^HashTable InitializeTable( int TableSize )$/;"	f
+Insert	hash_notfinished.c	/^void Insert( ElementType Key, ElementType Value, HashTable H )$/;"	f
+List	hash_notfinished.c	/^typedef Position List;$/;"	t	file:
+ListNode	hash_notfinished.c	/^struct ListNode$/;"	s	file:
+MinTableSize	hash_notfinished.c	42;"	d	file:
+Next	hash_notfinished.c	/^	Position    Next;$/;"	m	struct:ListNode	file:
+NextPrime	hash_notfinished.c	/^static int NextPrime( int N )$/;"	f	file:
+Position	hash_notfinished.c	/^typedef struct ListNode *Position;$/;"	t	typeref:struct:ListNode	file:
+Retrieve	hash_notfinished.c	/^ElementType Retrieve( Position P )$/;"	f
+TableSize	hash_notfinished.c	/^	int TableSize;$/;"	m	struct:HashTbl	file:
+TheLists	hash_notfinished.c	/^	List *TheLists;$/;"	m	struct:HashTbl	file:
+Value	hash_notfinished.c	/^	ElementType Value;$/;"	m	struct:ListNode	file:
+main	hash_notfinished.c	/^int main(void)$/;"	f
+num	hash_notfinished.c	/^int num[] = {-1,-2,-3,-4,-5};$/;"	v
+twoSum	hash_notfinished.c	/^int* twoSum(int* nums, int numsSize, int target, int* returnSize)$/;"	f
