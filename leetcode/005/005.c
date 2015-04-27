@@ -23,7 +23,10 @@ char* longestPalindrome(char* s)
 {
 	int i = 0;
 	int j = 0;
+	int k = 0;
+
 	int len = 0;
+	int sub_len = 0;
 	int max_len = 0;
 	int start = 0;
 	int end = 0;
@@ -31,52 +34,41 @@ char* longestPalindrome(char* s)
 
 	len = strlen(s);
 
-	//判断以i为中心的子字符串，[i - j] 到 [i + j]
+	//子串从[i]到[j]
 	for(i = 0; i < len; i++)
 	{
-		//从子串中心向两边判断,子串长度是奇数
-		for(j = 0; i - j >= 0 && i + j < len; j++)
+		for(j = i; j < len; j++)
 		{
-			if(s[i - j] == s[i + j])
+			//判断该字串是否是回文串
+			sub_len = j - i + 1;
+			for(k = 0; k <= (sub_len - 1) / 2; k++)
 			{
-				if(max_len < 2 * j + 1)
+				if(s[i + (k)] == s[i + (sub_len - 1 - k)])
 				{
-					max_len = 2 * j + 1;
-					start = i - j;		//子串起始位置
-					end = i + j;		//子串终止位置
+					
+				}
+				else
+				{
+					break;
 				}
 			}
-			else
+
+			if(k > (sub_len - 1) / 2)
 			{
-				break;
+				if(max_len < sub_len)
+				{
+					max_len = sub_len;
+					start = i;
+					end = j;
+				}
 			}
 		}
 	}
 	
-	//判断以i和i+1为中心的子字符串，[i - j] 到 [i + j + 1]
-	for(i = 0; i < len; i++)
-	{
-		//从子串中心向两边判断，字串长度是偶数
-		for(j = 0; i - j >= 0 && i + j + 1 < len; j++)
-		{
-			if(s[i - j] == s[i + j + 1])
-			{
-				if(max_len < 2 * j + 2)
-				{
-					max_len = 2 * j + 2;
-					start = i - j;
-					end = i + j + 1;
-				}
-			}
-			else
-			{
-				break;
-			}
-		}
-	}
 
-//	printf("str = %s\n", s);
-//	printf("maxlen = %d\n", max_len);
+
+	printf("str = %s\n", s);
+	printf("maxlen = %d\n", max_len);
 
 	str = malloc(max_len + 1);
 	memcpy(str, s + start, max_len);
@@ -89,6 +81,7 @@ int main(void)
 {
 	longestPalindrome("abcddcabcd");	
 	longestPalindrome("abcdcabcd");	
+	longestPalindrome("ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg");	
 
 	return 0;
 }
