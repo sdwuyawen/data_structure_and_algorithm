@@ -17,7 +17,9 @@
  */
 #include <stdlib.h>
 #include <stdio.h>
-
+/* 
+ * 奇数时，返回[len/2]
+ * 偶数时，返回[len/2 - 1] 和 [len / 2]的平均值 */
 double findMedianSortedArrays(int* nums1, int nums1Size, int* nums2, int nums2Size) 
 {
 	double last = 0.0;
