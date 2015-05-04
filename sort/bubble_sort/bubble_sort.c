@@ -18,42 +18,58 @@
 #include <stdio.h>
 
 
-void insertion_sort(int *A, int N)
+//冒泡排序1
+void bubble_sort1(int a[], int n)
 {
-	int j, P;
-	int tmp;
+	int i, j;
+	int temp;
 
-	for(P = 1; P < N; P++)
+	for (i = 0; i < n; i++)
 	{
-		tmp = A[P];
-		for(j = P; j > 0 && A[j - 1] > tmp; j--)
-			A[j] = A[j - 1];
-		A[j] = tmp;
-	}
-}
-
-void insertion_sort1(int *A, int N)
-{
-	int j, P;
-	int tmp;
-
-	for(P = 1; P < N; P++)
-	{
-		tmp = A[P];
-		for(j = P; j > 0; j--)
-		{
-			if(A[j - 1] > tmp)
-			{
-				A[j] = A[j - 1];
-			}
-			else
-			{
-				break;
+		for (j = 1; j < n - i; j++)
+		{	
+			if (a[j - 1] > a[j])
+			{		
+				temp = a[j - 1];
+				a[j - 1] = a[j];
+				a[j] = temp;
 			}
 		}
-		A[j] = tmp;
 	}
 }
+
+//冒泡排序2
+void bubble_sort2(int a[], int n)
+{
+	int i, j;
+	int temp;
+	int flag;
+
+	for (i = 0; i < n; i++)
+	{
+		flag = 0;
+		
+		for (j = 1; j < n - i; j++)
+		{	
+			if (a[j - 1] > a[j])
+			{		
+				temp = a[j - 1];
+				a[j - 1] = a[j];
+				a[j] = temp;
+
+				flag = 1;
+			}
+		}
+
+		//如果有一趟没有发生交换，则之后的所有趟也不会发生交换，排序完成
+		if(flag == 0)
+		{
+			break;
+		}
+
+	}
+}
+
 
 int main(void)
 {
@@ -76,9 +92,9 @@ int main(void)
 			printf("%d ", array[i]);
 		}
 		printf("\n");
-		
-		insertion_sort(array, count);
-		
+
+		bubble_sort2(array, count);
+
 		printf("dst array:");
 		for(i = 0; i < count ; i++)
 		{
