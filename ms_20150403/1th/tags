@@ -1,0 +1,20 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+FALSE	test.c	5;"	d	file:
+TRUE	test.c	4;"	d	file:
+abs_int	test.c	/^int abs_int(int value)$/;"	f
+desired_x	test.c	/^int desired_x, desired_y, desired_z;$/;"	v
+desired_y	test.c	/^int desired_x, desired_y, desired_z;$/;"	v
+desired_z	test.c	/^int desired_x, desired_y, desired_z;$/;"	v
+input_sequence	test.c	/^char input_sequence[20000] = {0};$/;"	v
+main	test.c	/^int main(void) $/;"	f
+num_blue	test.c	/^int num_blue = 0;$/;"	v
+num_max	test.c	/^int num_max = 0;$/;"	v
+num_now	test.c	/^int num_now = 0;$/;"	v
+num_red	test.c	/^int num_red = 0;$/;"	v
+num_yellow	test.c	/^int num_yellow = 0;$/;"	v
+process_ball	test.c	/^int process_ball(char input_sequence)$/;"	f
