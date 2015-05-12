@@ -1,0 +1,17 @@
+#/project
+#*.*
+#!*.c
+
+#/*
+#!/.gitignore
+#!/project/*
+
+*
+*.*
+!*/
+!*.c
+!*.cpp
+!*.h
+!*.txt
+!*.doc
+!.gitignore
