@@ -12,6 +12,7 @@
 !*.c
 !*.cpp
 !*.h
+!Makefile
 !*.txt
 !*.doc
 !.gitignore
