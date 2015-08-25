@@ -211,10 +211,23 @@ bintree copytree(bintree src)
 	return node;
 }
 
+//求树的高度，递归实现
+int height_tree(bintree t){  
+    int h,left,right;  
+    if(!t){  
+        return 0;  
+    }  
+    left = height_tree(t->lchild);  
+    right = height_tree(t->rchild);  
+    h = (left>right?left:right)+1;  
+    return h;  
+}
+
 int main(void)
 {
 	datatype search_value;
 	int count;
+	int height;
 	bintree root;
 	bintree mirror;
 	bintree node;
@@ -252,6 +265,9 @@ int main(void)
 		preorder(mirror);
 		printf("\n");
 	}
+
+	height = height_tree(root);
+	printf("height = %d\n", height);
 	
 
 	//查找
