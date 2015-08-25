@@ -149,7 +149,7 @@ void createtree_preorder(bintree *t){
     }  
 } 
 
-//查找
+//查找，递归
 bintree search_tree(bintree t,datatype x){  
 	bintree ret;
     if(!t){  
@@ -167,9 +167,18 @@ bintree search_tree(bintree t,datatype x){
     }  
 }  
 
+//统计节点个数
+int count_tree(bintree t){  
+    if(t){  
+        return (count_tree(t->lchild)+count_tree(t->rchild)+1);  
+    }  
+    return 0;  
+}
+
 int main(void)
 {
 	datatype search_value;
+	int count;
 	bintree root;
 	bintree node;
 
@@ -193,6 +202,11 @@ int main(void)
 	printf("\n");
 	postorder(root);
 	printf("\n");
+
+	//统计节点个数
+	count = count_tree(root);
+	printf("total %d nodes\n", count);
+	
 
 	//查找
 	while(1)
