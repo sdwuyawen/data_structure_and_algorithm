@@ -175,11 +175,48 @@ int count_tree(bintree t){
     return 0;  
 }
 
+//比较两个二叉树是否相同
+//1,相同。0，不相同
+int is_equal(bintree t1,bintree t2){  
+    if(!t1 && !t2){      //都为空就相等  
+        return 1;  
+    }  
+    if(t1 && t2 && t1->data == t2->data){      //有一个为空或数据不同就不判断了  
+        if(is_equal(t1->lchild,t2->lchild))  
+            if(is_equal(t1->rchild,t2->rchild)){  
+                return 1;  
+            }  
+    }  
+    return 0;  
+} 
+
+//复制二叉树
+bintree copytree(bintree src)
+{
+	bintree node;
+
+	if(!src)
+		return NULL;
+
+	//分配当前节点
+	node = (bintree)malloc(sizeof(BinNode));  
+	
+	//复制当前节点
+	node->data = src->data;  
+	//复制左子树
+	node->lchild = copytree(src->lchild);	
+	//复制右子树
+	node->rchild = copytree(src->rchild);	
+
+	return node;
+}
+
 int main(void)
 {
 	datatype search_value;
 	int count;
 	bintree root;
+	bintree mirror;
 	bintree node;
 
 	//创建二叉树
@@ -206,6 +243,15 @@ int main(void)
 	//统计节点个数
 	count = count_tree(root);
 	printf("total %d nodes\n", count);
+
+	//复制二叉树
+	printf("copying tree\n");
+	mirror = copytree(root);
+	if(mirror)
+	{	
+		preorder(mirror);
+		printf("\n");
+	}
 	
 
 	//查找
