@@ -88,6 +88,53 @@ void infix_to_suffix(char* infix, char* suffix) {
     suffix[j] = '\0';
 }
 
+int suffix_calc(char *suffix)
+{
+	int stack[1000];
+	int top = 0;
+	int i;
+	int value;
+
+	value = 0;
+	for(i = 0; suffix[i] != '\0'; i++)
+	{
+		if(suffix[i] >= '0' && suffix[i] <= '9')
+		{
+			value = value * 10 +  (suffix[i] - '0');
+		}
+		else if(suffix[i] == ' ')
+		{
+			//操作数入栈，或利用操作符之后的' '把计算结果入栈
+			stack[top++] = value;
+			value = 0;
+		}
+		else
+		{
+			switch(suffix[i])
+			{
+				case '+':
+					value = stack[top - 2] + stack[top - 1];
+					break;
+				case '-':
+					value = stack[top - 2] - stack[top - 1];
+					break;
+				case '*':
+					value = stack[top - 2] * stack[top - 1];
+					break;
+				case '/':
+					value = stack[top - 2] / stack[top - 1];
+					break;
+				default:
+					break;
+			}
+			//操作数出栈，利用操作符之后的' '在下一次循环把计算结果入栈
+			top -= 2;
+		}
+	}
+	
+	return stack[0];	
+}
+
 int main(void)
 {
 	char infix[1000];
@@ -98,6 +145,7 @@ int main(void)
 
 	printf("%s\n", infix);
 	printf("%s\n", suffix);
+	printf("%d", suffix_calc(suffix));
 
 	return 0;
 }
