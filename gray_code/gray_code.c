@@ -26,16 +26,16 @@
 // 		generate_gray(buf, bits - 1);
 // 	}
 // 
-// 	//×Ü³¤¶È
+// 	//æ€»é•¿åº¦
 // 	count = pow(2, bits);
-// 	//ÉÏ°ë²¿¸öÊı
+// 	//ä¸ŠåŠéƒ¨ä¸ªæ•°
 // 	top_num = count / 2;
-// 	//ÉÏ°ë²¿ÆğÊ¼index
+// 	//ä¸ŠåŠéƒ¨èµ·å§‹index
 // 	bot_start = count / 2;
-// 	//ÏÂ°ë²¿½áÊøindex
+// 	//ä¸‹åŠéƒ¨ç»“æŸindex
 // 	bot_end = count - 1;
 // 
-// 	//ÉÏ°ë²¿ÕûÌåºóÒÆÒ»Î»
+// 	//ä¸ŠåŠéƒ¨æ•´ä½“åç§»ä¸€ä½
 // 	for(i = 0; i < top_num; i++)
 // 	{
 // 		for(j = bits - 1; i >= 1; j--)
@@ -43,13 +43,13 @@
 // 			buf[i][j] = buf[i][j - 1];
 // 		}
 // 	}
-// 	//ÉÏ°ë²¿Ê×²¿Îª0
+// 	//ä¸ŠåŠéƒ¨é¦–éƒ¨ä¸º0
 // 	for(i = 0; i < top_num; i++)
 // 	{
 // 		buf[i][0] = 0;
 // 	}
 // 
-// 	//Éú³ÉÏÂ°ë²¿
+// 	//ç”Ÿæˆä¸‹åŠéƒ¨
 // 	for(i = 0; i < top_num; i++)
 // 	{
 // 		for(j = 1; j < bits; j++)
@@ -57,7 +57,7 @@
 // 			buf[bot_end - i][j] = buf[i][j];
 // 		}
 // 	}
-// 	//ÏÂ°ë²¿Ê×²¿Îª1
+// 	//ä¸‹åŠéƒ¨é¦–éƒ¨ä¸º1
 // 	for(i = bot_start; i <= bot_end; i++)
 // 	{
 // 		buf[i][0] = 1;
@@ -82,23 +82,25 @@ void generate_gray(int *buf, int bits)
 	if(bits == 1)
 	{
 		buf[0] = 0;
-		buf[1 * bits + 0] = 0;
+		buf[1 * bits + 0] = 1;
+
+		return;
 	}
 	else
 	{
 		generate_gray(buf, bits - 1);
 	}
 	
-	//×Ü³¤¶È
+	//æ€»é•¿åº¦
 	count = (int)pow(2, bits);
-	//ÉÏ°ë²¿¸öÊı
+	//ä¸ŠåŠéƒ¨ä¸ªæ•°,[0, top_num-1]
 	top_num = count / 2;
-	//ÏÂ°ë²¿ÆğÊ¼index
+	//ä¸‹åŠéƒ¨èµ·å§‹index,[bot_start, bot_end]
 	bot_start = count / 2;
-	//ÏÂ°ë²¿½áÊøindex
+	//ä¸‹åŠéƒ¨ç»“æŸindex
 	bot_end = count - 1;
 	
-//	//ÉÏ°ë²¿ÕûÌåºóÒÆÒ»Î»
+//	//ä¸ŠåŠéƒ¨æ•´ä½“åç§»ä¸€ä½
 //	for(i = 0; i < top_num; i++)
 //	{
 //		for(j = bits - 1; j >= 1; j--)
@@ -106,13 +108,13 @@ void generate_gray(int *buf, int bits)
 //			buf[i * bits + j] = buf[i * (bits - 1)+ j - 1];
 //		}
 //	}
-//	//ÉÏ°ë²¿Ê×²¿Îª0
+//	//ä¸ŠåŠéƒ¨é¦–éƒ¨ä¸º0
 //	for(i = 0; i < top_num; i++)
 //	{
 //		buf[i * bits] = 0;
 //	}
 	
-	//Éú³ÉÏÂ°ë²¿
+	//ç”Ÿæˆä¸‹åŠéƒ¨
 	for(i = 0; i < top_num; i++)
 	{
 		for(j = 1; j < bits; j++)
@@ -120,13 +122,13 @@ void generate_gray(int *buf, int bits)
 			buf[(bot_end - i) * bits + j] = buf[i * (bits - 1) + j - 1];
 		}
 	}
-	//ÏÂ°ë²¿Ê×²¿Îª1
+	//ä¸‹åŠéƒ¨é¦–éƒ¨ä¸º1
 	for(i = bot_start; i <= bot_end; i++)
 	{
 		buf[i * bits + 0] = 1;
 	}
 
-	//ÉÏ°ë²¿ÕûÌåºóÒÆÒ»Î»
+	//ä¸ŠåŠéƒ¨æ•´ä½“åç§»ä¸€ä½
 	for(i = 0; i < top_num; i++)
 	{
 		for(j = 1; j < bits; j++)
@@ -134,7 +136,7 @@ void generate_gray(int *buf, int bits)
 			buf[i * bits + j] = buf[(bot_end - i) * bits + j];
 		}
 	}
-	//ÉÏ°ë²¿Ê×²¿Îª0
+	//ä¸ŠåŠéƒ¨é¦–éƒ¨ä¸º0
 	for(i = 0; i < top_num; i++)
 	{
 		buf[i * bits] = 0;
@@ -148,7 +150,7 @@ void print_gray(int bits)
 	int j;
 	int count = (int)pow(2, bits);
 
-	//¹²count¸ö¸ñÀ×Âë£¬Ã¿¸ö¸ñÀ×ÂëÕ¼ÓÃbits¸öint
+	//å…±countä¸ªæ ¼é›·ç ï¼Œæ¯ä¸ªæ ¼é›·ç å ç”¨bitsä¸ªint
 	int *buf = (int *)malloc(count * sizeof(int) * bits);
 
 	generate_gray(buf, bits);
