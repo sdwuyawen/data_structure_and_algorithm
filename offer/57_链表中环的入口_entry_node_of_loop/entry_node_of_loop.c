@@ -45,10 +45,12 @@ list_node *entry_node_of_loop(list_node *phead)
 	list_node *pnode2;
 	int i;
 
+	/* 找到环中一个结点 */
 	meeting_node = meet_node(phead);
 	if(meeting_node == NULL)
 		return NULL;
 
+	/* 计算环的长度 */
 	pnode1 = meeting_node;
 	while(pnode1->next != meeting_node)
 	{
@@ -56,12 +58,14 @@ list_node *entry_node_of_loop(list_node *phead)
 		nodes_in_loop++;
 	}
 	
+	/* 从头结点开始，向后移动环的长度个结点 */
 	pnode1 = phead;
 	for(i = 0; i < nodes_in_loop; i++)
 	{
 		pnode1 = pnode1->next;
 	}
 
+	/* 找到环的入口结点 */
 	pnode2 = phead;
 	while(pnode1 != pnode2)
 	{
